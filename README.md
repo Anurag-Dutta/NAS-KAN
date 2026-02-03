@@ -3,10 +3,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
-[![Paper](https://img.shields.io/badge/Paper-ICIP%202026-blue)](https://github.com/Anurag-Dutta/NAS-KAN)
 
 > **Optimal Neural Architecture Search for Kolmogorov-Arnold Network-Based Image Classification**  
-> *Submitted to IEEE International Conference on Image Processing (ICIP) 2026*
+
 
 ---
 
@@ -51,9 +50,9 @@ This repository presents:
   - **Human-readable strings**: e.g., `Conv2d(k=3,p=1) -> ... -> KAN(order=3,grid=8,act=ReLU)`
 
 ### 2. **Constraint-Based Search Space Reduction**
-- Reduces unconstrained search space from **~14.4 billion** to **~150k architectures** (**5000× reduction**)
+- Reduces unconstrained search space (**5000× reduction**)
 - **Constraint I (Spatial Validity)**: Ensures output dimensions remain valid (≥1) after convolution + pooling
-- **Constraint II (Receptive Field Ordering)**: Enforces non-decreasing kernel sequences \( K_1 \leq K_2 \leq \ldots \leq K_d \) for hierarchical feature extraction
+- **Constraint II (Receptive Field Ordering)**: Enforces non-decreasing kernel sequences $K_1 \leq K_2 \leq \ldots \leq K_d$ for hierarchical feature extraction
 
 ### 3. **LM-Based Inverse Architecture Generation**
 - Fine-tuned **Mistral-7B-Instruct** with LoRA in 4-bit mode
@@ -66,11 +65,3 @@ This repository presents:
 - **Notable improvements**: +1.2261% on CIFAR-10, +2.2680% on STL-10
 - **2.6% reduction** in parameter count compared to baselines
 
----
-
-## 🚀 Installation
-
-```bash
-git clone https://github.com/Anurag-Dutta/NAS-KAN.git
-cd NAS-KAN
-pip install -r requirements.txt
